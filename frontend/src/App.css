@@ -1,0 +1,73 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+.operand{
+  width: 100px;
+  margin: 10px;
+  height: 35px;
+  border: 1px solid dodgerblue;
+  text-indent: 10px;
+  text-align: center;
+  border-radius: 10px;
+}
+.operation{
+  width: 60px;
+  margin: auto 5px;
+  height: 35px;
+  border: 1px solid dodgerblue;
+  text-indent: 5px;
+  text-align: center;
+  border-radius: 10px;
+  font-size: 20px;
+  color: dodgerblue;
+}
+.submit{
+  background-color: dodgerblue;
+  display: block;
+  padding: 10px 25px;
+  border-radius: 5px;
+  margin: 10px auto;
+  color: white;
+  text-align: center;
+}
+.result{
+  font-size: 20px;
+  color: black;
+}
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
