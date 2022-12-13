@@ -20,7 +20,7 @@ import static org.testng.AssertJUnit.assertEquals;
 @SpringBootTest(webEnvironment= SpringBootTest.WebEnvironment.RANDOM_PORT)
 public class DoMathE2ETest {
     @Autowired
-    private TestRestTemplate restTemplate;
+    private TestRestTemplate restTemplate=new TestRestTemplate();
     private JSONObject doMathObject = new JSONObject();
     private final ObjectMapper objectMapper = new ObjectMapper();
 //    private  HttpHeaders headers;
@@ -33,6 +33,6 @@ public class DoMathE2ETest {
         doMathObject.put("operation", "*");
         Double doMathResult =
                 restTemplate.postForObject("/math", doMathObject, Double.class);
-        assertEquals(String.valueOf(Double.valueOf(doMathResult)),Double.valueOf(3),false);
+        assertEquals(String.valueOf(Double.valueOf(doMathResult)),String.valueOf(Double.valueOf(3)),false);
     }
 }

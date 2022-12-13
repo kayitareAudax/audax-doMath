@@ -16,6 +16,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
 import org.testng.annotations.Test;
 
+import static org.mockito.Mockito.when;
 import static org.springframework.http.MediaType.APPLICATION_JSON_UTF8;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
@@ -27,13 +28,14 @@ public class DoMathControllerTest {
     DoMathRequest doMathRequest=new DoMathRequest(12,12,"+");
     @MockBean
     @Autowired
-    private MathOperatorImpl mathOperator;
+    private MathOperatorImpl mathOperatorMock;
     @Autowired
     private MockMvc mockMvc;
    @Test
     public void doMath_success() throws Exception {
        DoMathRequest doMathRequest1=new DoMathRequest(12,12,"+");
        ResponseEntity.status(HttpStatus.ACCEPTED).body(doMathRequest1);
+       when(mathOperatorMock.doMath(12,12,"+")).thenReturn(Double.valueOf(25));
        ObjectMapper mapper=new ObjectMapper();
        mapper.configure(SerializationFeature.WRAP_ROOT_VALUE,false);
        ObjectWriter ow = mapper.writer().withDefaultPrettyPrinter();
